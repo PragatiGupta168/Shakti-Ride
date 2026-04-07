@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs')   %>
+<%- include('nav.ejs')   %>
+
+<section>
+    <h1 align="center">Admin Home Page</h1>
+
+    <table class="table table-bordered w-50 mx-auto mt-3 text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>User Email</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% userData.forEach((user)=>{%>
+                <tr>
+                    <td><%= user.uid %> </td>
+                    <td><%= user.unm %> </td>
+                    <td><%= user.email %> </td>
+                </tr>
+
+
+            <%}) %>
+
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+</section>
+<%- include('partials/footer.ejs')   %>

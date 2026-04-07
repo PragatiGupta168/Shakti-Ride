@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility - ShaktiRide</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #1a2a6c, #fdbb2d);
+    color: #fff;
+    line-height: 1.6;
+  }
+  header {
+    background: rgb(126, 79, 126);
+    padding: 40px 20px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    color: #ffcc70;
+  }
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+  }
+  section {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  section h2 {
+    color: #ffcc70;
+    margin-bottom: 10px;
+  }
+  section p, li {
+    margin: 0 0 10px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  /* Footer */
+
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    background-color: lavender;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+    margin: 10px;
+}
+
+.footer h5 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.sign-up {
+    background-color: lavender;
+    text-align: center;
+    padding: 20px;
+}
+
+.sign-up p {
+    color: black;
+    margin: 0;
+}
+
+.sign-up button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sign-up button:hover {
+    background-color: gray;
+}
+
+/* Extra Footer Styling */
+.footer-extra {
+    background-color: lavender;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: black;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: darkblue;
+}
+
+.app-buttons {
+    margin-bottom: 15px;
+}
+
+.app-btn {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.app-btn i {
+    margin-right: 8px;
+}
+
+.app-btn:hover {
+    background-color: gray;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    color: black;
+}
+
+.footer-bottom a {
+    color: black;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+    }
+    .social-icons a {
+        font-size: 20px;
+    }
+    .app-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1><i class="fas fa-universal-access"></i> Accessibility at ShaktiRide</h1>
+  <p>Making career guidance accessible to everyone, regardless of ability.</p>
+</header>
+
+<div class="container">
+  <section>
+    <h2>1. Introduction</h2>
+    <p>At ShaktiRide, we are committed to providing an inclusive experience so that all individuals, including those with disabilities, can use our career guidance and personality development services.</p>
+  </section>
+
+  <section>
+    <h2>2. Accessibility Design Principles</h2>
+    <ul>
+      <li>High color contrast for better readability</li>
+      <li>Readable fonts and adjustable text sizes</li>
+      <li>Keyboard navigation support</li>
+      <li>Clear and consistent layouts</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Assistive Technology Support</h2>
+    <p>Our platform is compatible with screen readers, voice control software, and other assistive technologies.</p>
+  </section>
+
+  <section>
+    <h2>4. Customizable Experience</h2>
+    <p>Users can adjust font size, theme (light/dark mode), and interface preferences to suit their needs.</p>
+  </section>
+
+  <section>
+    <h2>5. Feedback & Contact</h2>
+    <p>If you encounter any accessibility barriers, please contact us at <a href="mailto:accessibility@ShaktiRide.com">accessibility@ShaktiRide.com</a>. We aim to respond within 48 hours.</p>
+  </section>
+
+  <section>
+    <h2>6. Our Commitment</h2>
+    <p>We continuously test and improve ShaktiRide to meet <strong>WCAG 2.1 Level AA</strong> guidelines, ensuring accessibility for all users.</p>
+  </section>
+</div>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer class="footer">
+    <div class="footer-column">
+            <h5>Company</h5>
+            <a href="/about">About</a>
+            <a href="/safety">Safety</a>
+            <a href="/career">Careers</a>
+            <a href="/Help">Help</a>
+        </div>
+        <div class="footer-column">
+            <h5>Products</h5>
+            <a href="/ride">Ride</a>
+            <a href="/drive">Drive</a>
+        </div>
+        <div class="footer-column">
+            <h5>Global citizenship</h5>
+            <a href="/sustainbility">Sustainability</a>
+            <a href="/diversity">Diversity and Inclusion</a>
+        </div>
+</footer>
+
+<div class="sign-up">
+    <p>Sign up to drive</p>
+    <button onclick="window.location.href='/driver-signup'">Get Started</button>
+</div>
+
+
+<div class="footer-extra">
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <div class="app-buttons" style="margin-top: 10px;">
+        <!-- Google Play Button -->
+        <a href="https://play.google.com/store" target="_blank" class="app-btn" 
+        style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+            <i class="fab fa-google-play"></i> Google Play
+        </a>
+
+        <!-- App Store Button -->
+        <a href="https://www.apple.com/in/app-store/" target="_blank" class="app-btn" 
+        style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+            <i class="fab fa-apple"></i> App Store
+        </a>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2025 ShaktiRide</span>
+        <a href="/privacy">Privacy</a>|
+        <a href="/accessibility">Accessibility</a>|
+        <a href="/terms">Terms</a>
+    </div>
+</div>
+</body>
+</html>

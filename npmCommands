@@ -1,0 +1,59 @@
+# <!-- npm init isme configuration file bnane ke liye details deni padengi-->
+# <!-- npm init-y isme default value set ho jayengi isse bahut jldi package.json file ban jati hai express ki -->
+# <!-- npm install packageName eg:npm install express -->
+# <!-- npm install packageName -g means global installation -->
+# <!-- npm i packageName install ki jgh hum i bhi likh sakte hai eg: npm i express-->
+# <!-- npm uninstall module for uninstalling moduleName eg: npm uninstall express  -->
+# <!-- npm install express -save means isme express ki dependency bhi save ho jayengi  -->
+# <!-- npm list isme saare modules show ho jayenge  -->
+# <!-- npm list -g global environment jitne bhi module hongey woh sab show honge -->
+# <!-- npm i nodemon is used for restarting the server -->
+# <!-- npm i nodemon -save-dev is used for adding the dependecies during the development  -->
+
+# <!-- For using in script name in opackage.json file  
+# "scripts": 
+#     "test": "echo \"Error: no test specified\" && exit 1",
+#     "start": "nodemon index.js",
+#     "demoScript": "nodemon index.js"
+# -->
+# <!-- we make script with name "start" and the prompt is npm start -->
+# <!-- when we make another script with name "demoScript" then we use this prompt to configure index.js file as npm run demoScript -->
+
+
+......................................................................................................................
+
+
+# DAY 2 OF express
+#How to use EJS
+# Install EJS as a dependency
+# Command: npm i ejs -save
+# b)Create views folder in application folder
+# c)set view engine in index.js file 
+# app.set('view engine','ejs')
+# d)instead of send we use render('viewName')
+
+
+---------------------------------------------------------------------------------------------------------------------
+# //How to add Images/Stylesheets/Javascripts in expresss Project
+---------------------------------------------------------------------------------------------------------------------
+# a)Create 'public' folder inside Application Folder(ExpressJsDemo folder ke andr)
+# b)Create "Images" folder inside the "public" folder
+# c)write below line in index. 
+# app.use(express.static('public'))
+
+----------------------------------------------------------------------------------
+CSS
+----------------------------------------------------------------------------------
+# a) Create "Stylesheets" folder inside "public"
+# b)Create style1.css inside folder "stylesheets"
+# c)open "header.ejs" and link "style1.css" file
+# <link href="stylesheets/style1.css" rel="stylesheets"/>
+
+---------------------------------------------------------------------------------
+#DAY 3
+--------------------------------------------------------------------------------
+# a) Install express and formidable together as dependencies
+# Command: npm i express formidable
+
+# Note: The correct command is 'npm i express formidable -save'
+# command:npm i express formidable -save

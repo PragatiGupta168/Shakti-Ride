@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShaktiRide Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+        background: rgb(233, 168, 244);
+        min-height: 100vh;
+        color: black;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+
+        }
+        
+        .header {
+            /* backdrop-filter: blur(10px); */
+            background-color:rgb(215, 122, 246);
+            border-bottom: 1px solid rgba(63, 20, 20, 0.1);
+        }
+        
+        .support-card {
+            background: rgba(255, 255, 255, 0.1);
+            /* backdrop-filter: blur(5px); */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg,black 0%, #109d43 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer {
+            background-color: lavender;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+        }
+
+        .footer h5 {
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .sign-up {
+            background-color: lavender;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .sign-up p {
+            color: black;
+            margin: 0;
+        }
+
+        .sign-up button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .sign-up button:hover {
+            background-color: gray;
+        }
+
+        /* Extra Footer Styling */
+        .footer-extra {
+            background-color: lavender;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .social-icons {
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            color: black;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: darkblue;
+        }
+
+        .app-buttons {
+            margin-bottom: 15px;
+        }
+
+        .app-btn {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 0 5px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.2s ease;
+        }
+
+        .app-btn i {
+            margin-right: 8px;
+        }
+
+        .app-btn:hover {
+            background-color: gray;
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            color: black;
+        }
+
+        .footer-bottom a {
+            color: black;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .footer {
+                flex-direction: column;
+            }
+            .social-icons a {
+                font-size: 20px;
+            }
+            .app-btn {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed top-0 left-0 right-0 z-50 py-4 px-6">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="text-2xl font-bold gradient-text">ShaktiRide</div>
+            <div class="flex items-center space-x-4">
+                <button class="text-sm font-medium hover:text-gray-300">
+    <i class="fa-solid fa-globe"></i> En
+</button>
+
+                <button class="bg-white text-black py-2 px-4 rounded-full text-sm font-medium hover:bg-gray-200 transition">Sign In</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold mb-4">Welcome to ShaktiRide Support</h1>
+            <p class="text-xl text-black-300 max-w-3xl mx-auto">
+                How can we help you today? Choose a category below to find answers and resources.
+            </p>
+        </div>
+
+        <!-- Category Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1: Riders -->
+            <div class="support-card p-8 rounded-xl cursor-pointer">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user-friends text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Riders</h3>
+                    <p class="text-black-300">Help with rides, payments, and account issues</p>
+                </div>
+            </div>
+
+            <!-- Card 2: Driving & Delivering -->
+            <div class="support-card p-8 rounded-xl cursor-pointer">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-car text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Driving & Delivering</h3>
+                    <p class="text-black-300">Resources for drivers and delivery partners</p>
+                </div>
+            </div>
+
+            <!-- Card 3: Shakti Eats -->
+            <div class="support-card p-8 rounded-xl cursor-pointer">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-utensils text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Shakti Eats</h3>
+                    <p class="text-black-300">Food delivery assistance and FAQs</p>
+                </div>
+            </div>
+
+            <!-- Card 4: Merchants -->
+            <div class="support-card p-8 rounded-xl cursor-pointer">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-store text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Merchants</h3>
+                    <p class="text-black-300">Support for merchant partners</p>
+                </div>
+            </div>
+
+            <!-- Card 5: Bikes & Scooters -->
+            <div class="support-card p-8 rounded-xl cursor-pointer">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bicycle text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Bikes & Scooters</h3>
+                    <p class="text-black-300">Help with micro-mobility rides</p>
+                </div>
+            </div>
+
+            <!-- Card 6: For Business -->
+            <div class="support-card p-8 rounded-xl cursor-pointer">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-briefcase text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">For Business</h3>
+                    <p class="text-gray-300">Corporate accounts and solutions</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+      <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer class="footer">
+    <div class="footer-column">
+            <h5>Company</h5>
+            <a href="/about">About</a>
+            <a href="/safety">Safety</a>
+            <a href="/career">Careers</a>
+            <a href="/Help">Help</a>
+        </div>
+        <div class="footer-column">
+            <h5>Products</h5>
+            <a href="/ride">Ride</a>
+            <a href="/drive">Drive</a>
+        </div>
+        <div class="footer-column">
+            <h5>Global citizenship</h5>
+            <a href="/sustainbility">Sustainability</a>
+            <a href="/diversity">Diversity and Inclusion</a>
+        </div>
+</footer>
+
+<div class="sign-up">
+    <p>Sign up to drive</p>
+    <button onclick="window.location.href='/driver-signup'">Get Started</button>
+</div>
+
+<div class="footer-extra">
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <div class="app-buttons" style="margin-top: 10px;">
+        <!-- Google Play Button -->
+        <a href="https://play.google.com/store" target="_blank" class="app-btn" 
+        style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+            <i class="fab fa-google-play"></i> Google Play
+        </a>
+
+        <!-- App Store Button -->
+        <a href="https://www.apple.com/in/app-store/" target="_blank" class="app-btn" 
+        style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+            <i class="fab fa-apple"></i> App Store
+        </a>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2025 ShaktiRide</span>
+        <a href="/privacy">Privacy</a>|
+        <a href="/accessibility">Accessibility</a>|
+        <a href="/terms">Terms</a>
+    </div>
+</div>
+
+
+
+    <script>
+        // Add click handlers for cards
+        document.querySelectorAll('.support-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('h3').textContent;
+                alert(`You clicked on ${title} category. This would navigate to the detailed support page normally.`);
+            });
+        });
+    </script>
+</body>
+</html>
+

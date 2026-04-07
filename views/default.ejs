@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ShaktiRide - Driven by Safety, Powered by Care</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    /* Custom fonts similar to Uber */
+    @import url('https://fonts.googleapis.com/css2?family=Uber+Move:wght@400;700&display=swap');
+    @font-face {
+    font-family: 'UberMove';
+    src: local('Uber Move'), local('UberMove'), url(https://fonts.gstatic.com/s/ubereats/v12/pxiDypQkot1TnFhsFMOfGShZKA.ttf) format('truetype');
+    font-weight: 400 700;
+    font-style: normal;
+    }
+    body {
+    font-family: 'UberMove', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: white;
+    color: #000000;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Rounded inputs and buttons with subtle shadows */
+    input, select, button {
+    border-radius: 0.75rem;
+    box-shadow: 0 1.5px 4px rgb(0 0 0 / 0.1);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    input:focus, select:focus {
+    outline: none;
+    border-color: #2563eb; /* bright blue */
+    box-shadow: 0 0 4px #3b82f6;
+    background-color: #f9fafb;
+    }
+    button {
+    background-color: #2563eb;
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    }
+    button:hover, button:focus {
+    background-color: #1e40af;
+    box-shadow: 0 0 8px #3b82f6;
+    }
+
+   /* Navigation bar style */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(69, 69, 184);
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+nav h1 {
+    margin: 0;
+    color: black;
+    font-weight: bold; /* Bold karega */
+    font-size: 1.5rem; /* Size bada karega */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 15px;
+    color: black;
+}
+
+nav button {
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 5px;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+}
+
+    
+    /* Main container */
+    .main-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 2rem 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+    /* Responsive stack on smaller screens */
+    @media (max-width: 768px) {
+    .main-section {
+        flex-direction: column;
+        padding: 2rem 1rem 3rem 1rem;
+        gap: 2rem;
+    }
+    }
+
+    /* Left side form container */
+    .form-container {
+flex: 1 1 400px;
+max-width: 500px;
+    }
+    .headline {
+    font-weight: 900;
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+      /* user-select: none; */
+    color: #000000;
+    }
+    @media (max-width: 768px) {
+    .headline {
+        font-size: 2.125rem;
+        text-align: center;
+    }
+    }
+
+    /* Form styles */
+    form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    }
+    label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #111111;
+      /* user-select: none; */
+    }
+    input[type="text"], input[type="date"], input[type="time"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #5d93e5;
+    font-size: 1rem;
+    color: #111827;
+    background: #f9fafb;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    }
+    .input-group-horizontal {
+    display: flex;
+    gap: 1rem;
+    }
+    .input-group-horizontal > div {
+    flex: 1 1 50%;
+    }
+    .input-with-icon {
+    position: relative;
+    }
+    .input-with-icon button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.15rem;
+    color: #2563eb;
+    transition: color 0.2s ease;
+    }
+    .input-with-icon button:hover, .input-with-icon button:focus {
+    color: #1e40af;
+    outline: none;
+    }
+    .input-with-icon button svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 3;
+    }
+
+    button.see-prices {
+    margin-top: 1rem;
+    padding: 0.9rem;
+    font-size: 1.125rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: 140px;
+    }
+
+    /* Right side image container */
+    .illustration-container {
+    flex: 1 1 500px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .illustration-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 20px rgb(37 99 235 / 0.15);
+      /* user-select: none; */
+    }
+
+    /* Footer */
+
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    background-color: lavender;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+    margin: 10px;
+}
+
+.footer h5 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.sign-up {
+    background-color: lavender;
+    text-align: center;
+    padding: 20px;
+}
+
+.sign-up p {
+    color: black;
+    margin: 0;
+}
+
+.sign-up button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sign-up button:hover {
+    background-color: gray;
+}
+
+/* Extra Footer Styling */
+.footer-extra {
+    background-color: lavender;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: black;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: darkblue;
+}
+
+.app-buttons {
+    margin-bottom: 15px;
+}
+
+.app-btn {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.app-btn i {
+    margin-right: 8px;
+}
+
+.app-btn:hover {
+    background-color: gray;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    color: black;
+}
+
+.footer-bottom a {
+    color: black;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+    }
+    .social-icons a {
+        font-size: 20px;
+    }
+    .app-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+
+        /* EN LANGUAGE SELECTOR */
+
+    body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    position: relative;
+}
+.popup {
+    position: absolute;
+    top: 30px; /* EN button ke neeche thoda gap */
+    right: 0;  /* Right align karega */
+    background: #f0f0ff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+.hidden {
+    display: none;
+}
+
+
+.language-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Ek ke neeche ek */
+    gap: 5px; /* Thoda gap between items */
+}
+
+.language-option {
+    cursor: pointer;
+    color: black;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.language-option:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-title {
+    font-weight: bold;
+    color: black;
+}
+
+
+.close-btn {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.language-list {
+    list-style: none;
+    padding: 0;
+}
+
+.language-option {
+    cursor: pointer;
+    color: black;
+    padding: 5px 0;
+}
+
+.language-option:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Suggestions */
+body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    /* Suggestion Grid */
+
+    .big-bold-heading {
+font-weight: 900;
+font-size: 3rem;
+color: #222;
+text-align: center;
+}
+
+    .suggestion-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .suggestion-card {
+        background-color: #f8d3e0;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, background-color 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .suggestion-card img {
+    width: 80px;  /* जितना बड़ा करना है */
+    height: 80px; /* proportional रखना */
+    object-fit: contain;
+}
+
+    .suggestion-card:hover {
+        transform: scale(1.05);
+        background-color: #f9e0e5;
+    }
+
+.suggestion-title {
+    font-weight: 700;          /* Bold */
+    font-size: 1.6rem;         /* Size बड़ा */
+    font-family: 'Poppins', sans-serif; /* Modern clean font */
+    margin-bottom: 8px;
+}
+
+    .suggestion-text {
+        margin: 15px 0;
+        color: #333;
+        font-size: 1rem;
+    }
+
+    .details-button {
+        background-color: white;
+        color: #6a1b9a;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .details-button:hover {
+        background-color: #f1f1f1;
+        transform: translateY(-2px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+        .suggestion-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .suggestion-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    /* Container for Login Section */
+    .container {
+        display: flex;
+        flex: 1;
+        padding: 20px;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(135deg, #f8c8d8, #e0c3fc);
+        margin-top: 0; /* margin-top removed since spacing is handled by suggestion-grid */
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .left {
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .left h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-align: left;
+        color: #222;
+    }
+
+    .left p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .login-button {
+        background-color: #000;
+        color: #fff;
+        margin-right: 10px;
+        type: button;
+    }
+
+    .login-button:hover {
+        background-color: #333;
+        transform: translateY(-2px);
+    }
+
+    .create-account {
+        color: #000;
+        text-decoration: none;
+        position: relative;
+        font-weight: 600;
+    }
+
+    .create-account:hover {
+        text-decoration: underline;
+    }
+
+    .right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right .illustration {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .sticky-footer {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        .suggestion-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .container {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px 10px;
+            gap: 20px;
+        }
+
+        .left {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .left h1 {
+            text-align: center;
+        }
+
+        .left p {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        .right .illustration {
+            max-width: 100%;
+        }
+    }
+
+
+    /* Scrolling */
+body {
+    height: 2000px; /* So page can scroll */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  #scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    background: linear-gradient(135deg, #6a1b9a, #f8d3e0);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(106, 27, 154, 0.6);
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #scrollTopBtn:hover {
+    background: linear-gradient(135deg, #4a0d6b, #f9e0e5);
+    transform: scale(1.1);
+  }
+  #scrollTopBtn svg {
+    pointer-events: none;
+  }
+
+
+/* Signup */
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    nav {
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+    }
+    .signup-btn {
+      background-color: white;
+      color: black;
+      padding: 6px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+    }
+    .dropdown {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+      min-width: 180px;
+      z-index: 10;
+    }
+    .dropdown a {
+      padding: 12px;
+      text-decoration: none;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+    .show {
+      display: flex;
+    }
+
+    /* Log in to see your recent activity */
+
+   .price-login-wrapper {
+    display: flex;
+    align-items: center; /* Vertical alignment fix */
+    gap: 15px; /* Button aur text ke beech space */
+}
+
+.login-text {
+    font-size: 16px; /* Font thoda bada */
+    color: black;
+    text-decoration: none;
+    font-weight: 400; /* Thoda normal weight rakha */
+}
+
+.login-text:hover {
+    text-decoration: underline;
+}
+
+
+
+</style>
+</head>
+<body>
+<nav style="background-color: rgb(233, 168, 244); display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <div style="display: flex; align-items: center;">
+        <h1 
+            style="margin: 0; color: black; cursor: pointer;" 
+            onclick="setTimeout(() => { window.location.href = 'index.html'; }, 1000)">
+            ShaktiRide
+        </h1>
+        <ul style="list-style-type: none; display: flex; margin: 0; padding: 0;">
+
+    <li style="margin: 0 15px; color: black;">
+        <a href="/ride" style="text-decoration: none; color: black;">Ride</a>
+    </li>
+    <li style="margin: 0 15px; color: black;">
+        <a href="/drive" style="text-decoration: none; color: black;">Drive</a>
+    </li>
+    <li style="margin: 0 15px; color: black;">
+        <a href="/business" style="text-decoration: none; color: black;">Business</a>
+    </li>
+    <li style="margin: 0 15px; color: black;">
+        <a href="/about" style="text-decoration: none; color: black;">About</a>
+    </li>
+</ul>
+
+    </div>
+
+    <div style="display: flex; align-items: center; position: relative;">
+    <span id="lang-btn" style="margin: 0 10px; color: black; cursor: pointer;">
+    <i class="fa-solid fa-globe"></i> EN</span>
+
+    <a href="/help" style="margin: 0 10px; color: black; text-decoration: none;">Help</a>
+    <a href="/login" style="margin: 0 10px; color: black; text-decoration: none;">Log in</a>
+
+    <!-- Sign up button -->
+        <button onclick="toggleDropdown()" style="border: none; background-color: purple; color: white; border-radius: 5px; padding: 10px 15px; margin: 0 5px; cursor: pointer;">
+            Sign up
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="dropdownMenu" style="display: none; position: absolute; right: 0; top: 50px; background-color: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); min-width: 200px; overflow: hidden;">
+            <a href="#" style="display: block; padding: 12px; text-decoration: none; color: black;">🚗 Ride</a>
+            <a href="#" style="display: block; padding: 12px; text-decoration: none; color: black;">🚴 Drive & deliver</a>
+            <a href="#" style="display: block; padding: 12px; text-decoration: none; color: black;">🍔 Uber Eats</a>
+            <a href="#" style="display: block; padding: 12px; text-decoration: none; color: black;">🏢 Business</a>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-header">
+            <span class="popup-title">Preferred Language</span>
+            <span class="close-btn" id="close-btn">×</span>
+        </div>
+        <ul class="language-list">
+            <li class="language-option" data-lang="EN">English</li>
+            <li class="language-option" data-lang="HI">Hindi</li>
+            <li class="language-option" data-lang="BN">Bengali</li>
+            <li class="language-option" data-lang="TA">Tamil</li>
+        </ul>
+    </div>
+</div>
+
+</nav>
+
+
+
+<main>
+    <section class="main-section" aria-label="Ride booking and illustration">
+    <div class="form-container" aria-labelledby="headline">
+        <h1 id="headline" class="headline">Driven by Safety,<br />Powered by Care- ShaktiRide</h1>
+
+        <form id="rideBookingForm" aria-describedby="formDesc">
+        <p id="formDesc" class="sr-only">Fill out the following fields to book your ride</p>
+
+        <div class="input-with-icon" style="margin-bottom: 1rem;">
+            <label for="pickupLocation">Pickup Location</label>
+            <input
+            type="text"
+            id="pickupLocation"
+            name="pickupLocation"
+            placeholder="Enter pickup location"
+            autocomplete="off"
+            aria-required="true"
+            aria-describedby="pickupDesc"
+            />
+            <button type="button" id="getLocationBtn" aria-label="Get exact pickup location">
+            <svg stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="location-pin-icon" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="#2563eb"/>
+                <path d="M12 8v4l3 3" stroke="#2563eb"/>
+            </svg>
+            </button>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+            <label for="dropoffLocation">Dropoff Location</label>
+            <input
+            type="text"
+            id="dropoffLocation"
+            name="dropoffLocation"
+            placeholder="Enter dropoff location"
+            autocomplete="off"
+            aria-required="true"
+            />
+        </div>
+
+        <div class="input-group-horizontal" style="margin-bottom: 1rem;">
+            <div>
+            <label for="rideDate">Date</label>
+            <input type="date" id="rideDate" name="rideDate" aria-required="true" aria-label="Select date" />
+            </div>
+            <div>
+            <label for="rideTime">Time</label>
+            <input type="time" id="rideTime" name="rideTime" aria-required="true" aria-label="Select time" />
+            </div>
+        </div>
+
+    <div class="price-login-wrapper">
+    <a href="/login">
+        <button type="button" class="see-prices" aria-live="polite">See prices</button>
+    </a>
+    <a href="/login" class="login-text">Log in to see your recent activity</a>
+</div>
+
+
+        </form>
+    </div>
+
+    <div class="illustration-container" aria-hidden="true">
+        <img
+        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c32e5e24-e4c4-47bc-93e5-4370996d4497.png"
+        alt="Illustration of a woman with warm-toned clothing stepping out of a car in a busy city street with sunny weather, tall modern buildings, and people walking along sidewalks."
+        onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/30c47c96-cc59-44c5-8191-ccabb6863bbb.png';"
+        />
+    </div>
+    </section>
+ </main>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+    <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+    </svg>
+</button>
+
+<script>
+    // Set default date & time to today and now + 10 mins for usability
+    const dateInput = document.getElementById('rideDate');
+    const timeInput = document.getElementById('rideTime');
+
+    function pad(num) {
+      return num < 10 ? '0' + num : num;
+    }
+
+    function setDefaultDateTime() {
+      const now = new Date();
+      dateInput.value = now.toISOString().split('T')[0];
+
+      // Round time up to next 10 minutes
+      let minutes = now.getMinutes();
+      minutes = Math.ceil(minutes / 10) * 10;
+      if (minutes === 60) {
+        now.setHours(now.getHours() + 1);
+        minutes = 0;
+      }
+      timeInput.value = pad(now.getHours()) + ':' + pad(minutes);
+    }
+    setDefaultDateTime();
+
+    // Get exact location button functionality
+    const getLocationBtn = document.getElementById('getLocationBtn');
+    const pickupInput = document.getElementById('pickupLocation');
+
+    getLocationBtn.addEventListener('click', () => {
+      if (!navigator.geolocation) {
+        alert('Geolocation is not supported by your browser.');
+        return;
+      }
+      getLocationBtn.disabled = true;
+      getLocationBtn.setAttribute('aria-busy', 'true');
+      getLocationBtn.title = 'Getting your location...';
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+
+          // Use a geocoding API to translate lat/lng to address (mock here with placeholder)
+          // For demo, just fill coordinates text
+          pickupInput.value = `Lat: ${latitude.toFixed(4)}, Lon: ${longitude.toFixed(4)}`;
+
+        getLocationBtn.disabled = false;
+        getLocationBtn.removeAttribute('aria-busy');
+        getLocationBtn.title = 'Get exact pickup location';
+        pickupInput.focus();
+        },
+        (error) => {
+          alert('Unable to retrieve your location. Please enter it manually.');
+          getLocationBtn.disabled = false;
+          getLocationBtn.removeAttribute('aria-busy');
+          getLocationBtn.title = 'Get exact pickup location';
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0,
+        }
+      );
+    });
+
+    // Form submission (for demo only)
+    const rideBookingForm = document.getElementById('rideBookingForm');
+    rideBookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const pickup = pickupInput.value.trim();
+      const dropoff = rideBookingForm.dropoffLocation.value.trim();
+      const date = dateInput.value;
+      const time = timeInput.value;
+
+      if (!pickup || !dropoff || !date || !time) {
+        alert('Please fill in all fields before checking prices.');
+        return;
+      }
+
+      alert(`Checking prices for ride:\nPickup: ${pickup}\nDropoff: ${dropoff}\nOn ${date} at ${time}`);
+      // Booking logic and backend integration would go here for a MERN app
+    });
+
+    // Language Selector
+
+// Get references to necessary elements
+const langBtn = document.getElementById('lang-btn');
+const popup = document.getElementById('popup');
+const closeBtn = document.getElementById('close-btn');
+const languageOptions = document.querySelectorAll('.language-option');
+
+// Function to show the popup
+langBtn.addEventListener('click', (event) => {
+    popup.classList.toggle('hidden');
+});
+
+// Function to hide the popup
+closeBtn.addEventListener('click', () => {
+    popup.classList.add('hidden');
+});
+
+languageOptions.forEach(option => {
+    option.addEventListener('click', (event) => {
+        const selectedLang = event.target.getAttribute('data-lang');
+        langBtn.textContent = selectedLang; // Update the navbar text
+        popup.classList.add('hidden'); // Hide the popup after selection
+    });
+});
+
+// Hide popup when clicking outside of it
+window.addEventListener('click', (event) => {
+    if (!popup.contains(event.target) && event.target !== langBtn) {
+        popup.classList.add('hidden');
+    }
+});
+
+
+// Scrolling
+
+ document.addEventListener("DOMContentLoaded", function() {
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          scrollTopBtn.style.display = "flex";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      });
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      scrollTopBtn.addEventListener("touchstart", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+
+    //Signup
+    function toggleDropdown() {
+        let menu = document.getElementById("dropdownMenu");
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // Outside click pe close ho
+    window.addEventListener("click", function(event) {
+        if (!event.target.closest("nav")) {
+            document.getElementById("dropdownMenu").style.display = "none";
+        }
+    });
+
+</script>
+
+
+<h1 class="big-bold-heading">Suggestions</h1>
+<div class="suggestion-grid">
+    <!-- Card 1: Ride -->
+    <div class="suggestion-card">
+        🚗
+        <div class="suggestion-title">Ride</div>
+        <div class="suggestion-text">Go anywhere with Uber. Request a ride, hop in, and go.</div>
+        <button class="details-button" type="button">Details</button>
+    </div>
+
+    <!-- Card 2: Reserve -->
+    <div class="suggestion-card">
+        📅
+        <div class="suggestion-title">Reserve</div>
+        <div class="suggestion-text">Reserve your ride in advance so you can relax on the day of your trip.</div>
+        <button class="details-button" type="button">Details</button>
+    </div>
+
+    <!-- Card 3: Intercity -->
+    <div class="suggestion-card">
+        🧳
+        <div class="suggestion-title">Intercity</div>
+        <div class="suggestion-text">Get convenient, affordable outstation cabs anytime at your door.</div>
+        <button class="details-button" type="button">Details</button>
+    </div>
+
+    <!-- Card 4: Rentals -->
+    <div class="suggestion-card">
+        ⏱️
+        <div class="suggestion-title">Rentals</div>
+        <div class="suggestion-text">Request a trip for a block of time and make multiple stops.</div>
+        <button class="details-button" type="button">Details</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="left">
+        <h1>Log in to see your account details</h1>
+        <p>View past trips, tailored suggestions, support resources, and more.</p>
+        <button class="button login-button" type="button">Log in to your account</button>
+        <a href="#" class="create-account">Create an account</a>
+    </div>
+    <div class="right">
+        <svg class="illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 50h44l4-20H6l4 20z" fill="#e0c3fc" />
+            <circle cx="20" cy="40" r="4" fill="#f8c8d8" />
+            <circle cx="44" cy="40" r="4" fill="#f8c8d8" />
+            <path d="M10 50c-2 0-4-2-4-4s2-4 4-4" fill="#f8c8d8" />
+            <path d="M54 50c2 0 4-2 4-4s-2-4-4-4" fill="#f8c8d8" />
+            <path d="M20 30c0-6 4-10 10-10s10 4 10 10" fill="#f8c8d8" />
+            <path d="M20 30c-2 0-4-2-4-4s2-4 4-4" fill="#f8c8d8" />
+            <path d="M44 30c2 0 4-2 4-4s-2-4-4-4" fill="#f8c8d8" />
+            <path d="M20 30c0 2-2 4-4 4" fill="#f8c8d8" />
+            <path d="M44 30c0 2 2 4 4 4" fill="#f8c8d8" />
+        </svg>
+    </div>
+</div>
+
+<div class="sticky-footer">
+    See prices
+</div>
+
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer class="footer">
+<div class="footer-column">
+            <h5>Company</h5>
+            <a href="/about">About</a>
+            <a href="/safety">Safety</a>
+            <a href="/career">Careers</a>
+            <a href="/help">Help</a>
+        </div>
+        <div class="footer-column">
+            <h5>Products</h5>
+            <a href="/ride">Ride</a>
+            <a href="/drive">Drive</a>
+        </div>
+        <div class="footer-column">
+            <h5>Global citizenship</h5>
+            <a href="/sustainbility">Sustainability</a>
+            <a href="/diversity">Diversity and Inclusion</a>
+        </div>
+</footer>
+
+<div class="sign-up">
+    <p>Sign up to drive</p>
+    <button onclick="window.location.href='/driver-signup'">Get Started</button>
+</div>
+
+<div class="footer-extra">
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <div class="app-buttons" style="margin-top: 10px;">
+        <!-- Google Play Button -->
+        <a href="https://play.google.com/store" target="_blank" class="app-btn" 
+        style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+            <i class="fab fa-google-play"></i> Google Play
+        </a>
+
+        <!-- App Store Button -->
+        <a href="https://www.apple.com/in/app-store/" target="_blank" class="app-btn" 
+        style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+            <i class="fab fa-apple"></i> App Store
+        </a>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2025 ShaktiRide</span>
+         <a href="/privacy">Privacy</a>|
+        <a href="/accessibility">Accessibility</a>|
+        <a href="/terms">Terms</a>
+    </div>
+</div>
+
+</body>
+</html>
+

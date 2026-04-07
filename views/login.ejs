@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" action="/login" method="POST">
+            <div class="login-header">
+                <a href="/default" class="back-btn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <h1>Log in</h1>
+            </div>
+
+            <!-- Email/Phone Input -->
+            <input type="text" name="mailId" placeholder="Enter phone number or email" required>
+
+            <!-- Password Input -->
+            <input type="password" name="password" placeholder="Enter your password" required>
+
+            <!-- ✅ Error Message -->
+            <% if (typeof error !== "undefined") { %>
+                <p style="color: red; font-size: 14px;"><%= error %></p>
+            <% } %>
+
+            <button type="submit">Continue</button>
+            <div class="divider">or</div>
+            <div class="social-buttons">
+                <button type="button" class="google">
+                    <i class="fa-brands fa-google"></i> Continue with Google
+                </button>
+
+                <button type="button" class="apple">
+                    <i class="fa-brands fa-apple"></i> Continue with Apple
+                </button>
+
+                <button type="button" class="qr-code">
+                    <i class="fa-solid fa-qrcode"></i> Log in with QR code
+                </button>
+            </div>
+            <small class="privacy-text">
+                By continuing, you agree to our Terms of Service and Privacy Policy.
+            </small>
+
+            <!-- Create account option -->
+            <p class="create-account">
+                Don’t have an account? <a href="/signup">Create one</a>
+            </p>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-column">
+            <h5>Company</h5>
+            <a href="/about">About</a>
+            <a href="/safety">Safety</a>
+            <a href="/career">Careers</a>
+            <a href="/Help">Help</a>
+        </div>
+        <div class="footer-column">
+            <h5>Products</h5>
+            <a href="/ride">Ride</a>
+            <a href="/drive">Drive</a>
+        </div>
+        <div class="footer-column">
+            <h5>Global citizenship</h5>
+            <a href="/sustainbility">Sustainability</a>
+            <a href="/diversity">Diversity and Inclusion</a>
+        </div>
+    </footer>
+
+    <div class="sign-up">
+        <p>Sign up to drive</p>
+        <button onclick="window.location.href='/driver-signup'">Get Started</button>
+    </div>
+
+    <div class="footer-extra">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="app-buttons" style="margin-top: 10px;">
+            <!-- Google Play Button -->
+            <a href="https://play.google.com/store" target="_blank" class="app-btn" 
+            style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
+
+            <!-- App Store Button -->
+            <a href="https://www.apple.com/in/app-store/" target="_blank" class="app-btn" 
+            style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+                <i class="fab fa-apple"></i> App Store
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2025 ShaktiRide</span>
+            <a href="/privacy">Privacy</a>|
+            <a href="/accessibility">Accessibility</a>|
+            <a href="/terms">Terms</a>
+        </div>
+    </div>
+</body>
+</html>

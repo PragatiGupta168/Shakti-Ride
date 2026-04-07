@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    /* Pinkish appealing gradient background
+    background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 40%, #ff1493 100%);
+    color: #222; /* Dark text for contrast */
+} 
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    /* backdrop-filter: blur(8px); */
+    padding: 10px 20px;
+    color: white;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.menu a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ffe4e1;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+}
+
+.signup {
+    background-color: #ff1493;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup:hover {
+    background-color: #e01384;
+}
+
+/* Login container */
+
+body {
+    background-color: rgb(233, 168, 244);
+}
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Card-like login form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-form input:focus {
+    border-color: #ff69b4;
+    outline: none;
+    box-shadow: 0 0 6px rgba(255, 105, 180, 0.5);
+}
+
+.login-form button {
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-form button:hover {
+    background: linear-gradient(90deg, #ff1493, #ff69b4);
+    transform: translateY(-2px);
+}
+
+/* Divider text */
+.divider {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Social login buttons */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.social-buttons button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    color: black; /* <-- TEXT VISIBLE */
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* icon aur text ke beech spacing */
+    transition: background 0.3s;
+}
+
+.social-buttons button:hover {
+    background: #ffe4e1;
+}
+
+.social-buttons button:hover {
+    background: #ffe4e1;
+}
+
+/* Privacy text */
+.privacy-text {
+    margin-top: 15px;
+    font-size: 12px;
+    color: grey;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .login-container {
+        padding: 20px;
+    }
+}
+
+
+/* Footer */
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer {
+            background-color: lavender;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+        }
+        .footer h5 {
+            color: black;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .sign-up {
+            background-color: lavender;
+            text-align: center;
+            padding: 20px;
+        }
+        .sign-up p {
+            color: black;
+            margin: 0;
+        }
+        .sign-up button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .sign-up button:hover {
+            background-color: gray;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .footer {
+                flex-direction: column;
+            }
+        }
+
+        /* Login */
+        .login-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            color: black;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            color: gray;
+        }
+
+        /* Create account option */
+        .create-account {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .create-account a {
+            color: black; /* Tumhare existing text color ke according */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .create-account a:hover {
+            text-decoration: underline;
+        }

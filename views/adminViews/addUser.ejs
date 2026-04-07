@@ -1,0 +1,39 @@
+
+<%- include('./partials/header.ejs')   %>
+<%- include('./nav.ejs')   %>
+<section>
+    <form method="post">
+    <table class="table table-bordered w-50 mx-auto table-dark text-center mt-3">
+        <thead>
+            <tr>
+                <td colspan="2"> Add User Form</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> User Name</td>
+                <td><input type="text" name="unm" /></td>
+            </tr>
+
+            <tr>
+                <td> Email </td>
+                <td><input type="email" name="mailId" /></td>
+            </tr>
+
+            <tr>
+                <td> Password </td>
+                <td><input type="password" name="pwd" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><input type="submit" name="addBtn" class="btn-success" /></td>
+            </tr>
+
+        </tbody>
+    </table>
+    </form>
+    <%if(msg){ %>
+    <p class="alert alert-success w-50 mx-auto"><%= msg %></p>
+    <% } %>
+</section>
+<%- include('./partials/footer.ejs')   %>

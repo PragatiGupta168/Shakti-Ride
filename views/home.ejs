@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home EJS</title>
+</head>
+<body>
+
+    <hr color="navy" size="5px"/>
+    <h1 align="center">Application Home Page</h1>
+    <hr color="navy" size="5px"/>
+
+    <!-- <%= fruitsNames[0]%> -->
+
+    <ul>
+        <% fruitsNames.forEach((fruit)=>{%>
+            <li>
+                <%= fruit %>
+            </li>
+        <%})%>
+    </ul>
+
+    <%= userData.uid %>
+    <%= userData.unm %>
+    <%= userData.gender %>
+    
+</body>
+</html>

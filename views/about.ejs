@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - ShaktiRide</title>
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: plum; /* light purple */
+    color: black;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 0;
+    align-items: center;
+    background: #ac82d8;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left Column Styling */
+.left-column {
+    flex: 1;
+    padding: 20px;
+    color: black;
+    max-width: 550px;
+}
+
+.left-column h1 {
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+    color: #6A0DAD; /* deep purple */
+}
+
+.left-column h2 {
+    font-weight: 600;
+    margin-top: 20px;
+    color: #8E44AD;
+}
+
+.left-column h3 {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.left-column p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #6A0DAD;
+    color: white;
+    font-size: 1.1em;
+    border-radius: 30px;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #5B0BA3;
+}
+
+/* Right Column Styling */
+.right-column {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Rapido-style image frame */
+.image-frame {
+    position: relative;
+    display: inline-block;
+}
+
+.bg-image {
+    width: 500px; /* Pehle 400px thi, ab aur badi */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.circle-image {
+    position: absolute;
+    bottom: -35px;
+    right: -35px;
+    width: 220px; /* Pehle 180px thi */
+    height: 220px;
+    border-radius: 50%;
+    border: 8px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+/* Gradient Background Circle size update */
+.right-column::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 380px; /* Pehle 300px thi */
+    height: 380px;
+    background: radial-gradient(circle, #DCC6E0 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+
+
+/* Hover Effect */
+.bg-image:hover,
+.circle-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+    }
+
+    .left-column, 
+    .right-column {
+        width: 100%;
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .bg-image {
+        width: 90%;
+    }
+
+    .circle-image {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 15px;
+    }
+
+    .right-column::before {
+        display: none;
+    }
+}
+
+
+    /* Footer */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    background-color: lavender;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+    margin: 10px;
+}
+
+.footer h5 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.sign-up {
+    background-color: lavender;
+    text-align: center;
+    padding: 20px;
+}
+
+.sign-up p {
+    color: black;
+    margin: 0;
+}
+
+.sign-up button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sign-up button:hover {
+    background-color: gray;
+}
+
+/* Extra Footer Styling */
+.footer-extra {
+    background-color: lavender;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: black;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: darkblue;
+}
+
+.app-buttons {
+    margin-bottom: 15px;
+}
+
+.app-btn {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.app-btn i {
+    margin-right: 8px;
+}
+
+.app-btn:hover {
+    background-color: gray;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    color: black;
+}
+
+.footer-bottom a {
+    color: black;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+    }
+    .social-icons a {
+        font-size: 20px;
+    }
+    .app-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: black;
+    background: white;
+    padding: 8px 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 999;
+}
+.back-btn:hover {
+    background: #f0f0f0;
+    transform: scale(1.1);
+}
+
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <section class="about-section">
+        <div class="content">
+            <div class="left-column">
+                <h1>ShaktiRide: Empowering Women on the Move</h1>
+                <h2>Your Safe, Trusted, Women-Only Ride Service</h2>
+                <p>At ShaktiRide, we believe every woman deserves a safe and comfortable journey. Our platform connects women riders with women drivers, creating a community built on trust, security, and empowerment.</p>
+                <h3>Why Choose ShaktiRide?</h3>
+                <p>We prioritize your safety with verified women drivers, affordable fares, and timely rides. Whether commuting to work, attending an event, or running errands, ShaktiRide is your reliable travel companion.</p>
+                <p>Together, we are driving change — one ride at a time.</p>
+                <a href="#book" class="cta-button">Book Your Ride</a>
+            </div>
+            <div class="right-column">
+    <div class="image-frame">
+        <img src="/Images/women.png" alt="Driver" class="bg-image">
+        <img src="/Images/womendrive.png" alt="Rider" class="circle-image">
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer class="footer">
+    <div class="footer-column">
+            <h5>Company</h5>
+            <a href="/about">About</a>
+            <a href="/safety">Safety</a>
+            <a href="/career">Careers</a>
+            <a href="/Help">Help</a>
+        </div>
+        <div class="footer-column">
+            <h5>Products</h5>
+            <a href="/ride">Ride</a>
+            <a href="/drive">Drive</a>
+        </div>
+        <div class="footer-column">
+            <h5>Global citizenship</h5>
+            <a href="/sustainbility">Sustainability</a>
+            <a href="/diversity">Diversity and Inclusion</a>
+        </div>
+</footer>
+
+<div class="sign-up">
+    <p>Sign up to drive</p>
+    <button onclick="window.location.href='/driver-signup'">Get Started</button>
+</div>
+
+<div class="footer-extra">
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <div class="app-buttons" style="margin-top: 10px;">
+        <!-- Google Play Button -->
+        <a href="https://play.google.com/store" target="_blank" class="app-btn" 
+        style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+            <i class="fab fa-google-play"></i> Google Play
+        </a>
+
+        <!-- App Store Button -->
+        <a href="https://www.apple.com/in/app-store/" target="_blank" class="app-btn" 
+        style="display: inline-block; margin: 5px; padding: 10px 15px; background-color: black; color: white; border-radius: 5px; text-decoration: none;">
+            <i class="fab fa-apple"></i> App Store
+        </a>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2025 ShaktiRide</span>
+        <a href="/privacy">Privacy</a>|
+        <a href="/accessibility">Accessibility</a>|
+        <a href="/terms">Terms</a>
+    </div>
+</div>
+
+</body>
+</html>
+
+
